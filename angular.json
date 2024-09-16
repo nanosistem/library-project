@@ -3,5 +3,36 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "nsrtm-common": {
+      "projectType": "library",
+      "root": "projects/nsrtm-common",
+      "sourceRoot": "projects/nsrtm-common/src",
+      "prefix": "nsrtm",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/nsrtm-common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/nsrtm-common/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/nsrtm-common/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nsrtm-common/src/test.ts",
+            "tsConfig": "projects/nsrtm-common/tsconfig.spec.json",
+            "karmaConfig": "projects/nsrtm-common/karma.conf.js"
+          }
+        }
+      }
+    }
   }
 }

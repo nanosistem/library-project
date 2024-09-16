@@ -1,0 +1,1 @@
+export const defaultPageSizes = [10, 25, 100];
