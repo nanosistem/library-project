@@ -1,0 +1,13 @@
+<table class="table table-striped">
+  <caption>Componente Tabla Genérica</caption>
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns">{{ column.label }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of dataSource">
+      <td *ngFor="let column of columns">{{ row[column.property] }}</td>
+    </tr>
+  </tbody>
+</table>
